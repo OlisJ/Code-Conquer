@@ -37,6 +37,7 @@ $exp_fetched = mysqli_query($con, "SELECT * FROM expenses WHERE user_id = '$user
             <div class="sidebar-heading">Settings </div>
             <div class="list-group list-group-flush">
                 <a href="profile.php" class="list-group-item list-group-item-action "><span data-feather="user"></span> Profile</a>
+                <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span>AiAssistant</a>
                 <a href="logout.php" class="list-group-item list-group-item-action "><span data-feather="power"></span> Logout</a>
             </div>
         </div>
@@ -88,14 +89,14 @@ $exp_fetched = mysqli_query($con, "SELECT * FROM expenses WHERE user_id = '$user
                             <?php $count=1; while ($row = mysqli_fetch_array($exp_fetched)) { ?>
                                 <tr>
                                     <td><?php echo $count;?></td>
-                                    <td>$<?php echo $row['expensedate']; ?></td>
+                                    <td><?php echo $row['expensedate']; ?></td>
                                     <td><?php echo '$'.$row['expense']; ?></td>
                                     <td><?php echo $row['expensecategory']; ?></td>
                                     <td class="text-center">
-                                        <a href="add_expense.php?edit=<?php echo $row['expense_id']; ?>" class="btn btn-primary btn-sm" style="border-radius:0%;">Edit</a>
+                                        <a href="add_expense.php?edit=<?php echo $row['expense_id']; ?>" type="button" class="btn btn-primary btn-sm">Edit</a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="add_expense.php?delete=<?php echo $row['expense_id']; ?>" class="btn btn-danger btn-sm" style="border-radius:0%;">Delete</a>
+                                        <a href="add_expense.php?delete=<?php echo $row['expense_id']; ?>" type="button" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             <?php $count++; } ?>

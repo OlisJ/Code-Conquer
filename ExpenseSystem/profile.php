@@ -52,8 +52,7 @@ if (isset($_POST['but_upload'])) {
     <link href="css/style.css" rel="stylesheet">
     <script src="js/feather.min.js"></script>
     <title>Expense Manager - Dashboard</title>
-
-    
+    <!-- removed dark mode style, revert to default -->
 
 </head>
 
@@ -77,6 +76,7 @@ if (isset($_POST['but_upload'])) {
             <div class="sidebar-heading">Settings </div>
             <div class="list-group list-group-flush">
                 <a href="profile.php" class="list-group-item list-group-item-action sidebar-active"><span data-feather="user"></span> Profile</a>
+                <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span>AiAssistant</a>
                 <a href="logout.php" class="list-group-item list-group-item-action "><span data-feather="power"></span> Logout</a>
             </div>
         </div>

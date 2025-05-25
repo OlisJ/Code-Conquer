@@ -1,3 +1,6 @@
+
+}
+?>
 <?php
   include("session.php");
   $exp_category_dc = mysqli_query($con, "SELECT expensecategory FROM expenses WHERE user_id = '$userid' GROUP BY expensecategory");
@@ -19,14 +22,172 @@
 
   <title>Expense Manager - Dashboard</title>
   <style>
-    .card a {
+    body {
+      background-color: #efefef;
       color: #000;
+    }
+
+    #sidebar-wrapper,
+    #sidebar-wrapper .user,
+    #sidebar-wrapper .sidebar-heading,
+    #sidebar-wrapper .list-group,
+    #sidebar-wrapper .list-group-item {
+      background-color: #fff !important;
+      color: #000 !important;
+      border: none !important;
+    }
+
+    .container-fluid,
+    .row,
+    .col,
+    .col-md {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+
+    .card,
+    .card-header,
+    .card-body,
+    .card-title {
+      background-color: #fff !important;
+      color: #000 !important;
+      border: 1px solid #ddd !important;
+    }
+
+    .list-group-item.sidebar-active,
+    .list-group-item:hover {
+      background-color: #f8f9fa !important;
+      color: #28a745 !important;
+    }
+
+    .navbar,
+    .navbar-light,
+    .border-bottom {
+      background-color: #fff !important;
+      color: #000 !important;
+      border-color: #ddd !important;
+    }
+
+    .navbar.border-bottom {
+      border-bottom: 1px solid #ddd !important;
+      box-shadow: none !important;
+    }
+
+    .dropdown-menu {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+
+    .dropdown-item {
+      color: #000 !important;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: #f8f9fa !important;
+      color: #28a745 !important;
+    }
+
+    .user h5,
+    .user p {
+      color: #000 !important;
+    }
+
+    .card a {
+      color: #000 !important;
       font-weight: 500;
     }
 
     .card a:hover {
-      color: #28a745;
+      color: #28a745 !important;
       text-decoration: dotted;
+    }
+
+    .form-control,
+    .form-control:focus,
+    input,
+    textarea,
+    select {
+      background-color: #fff !important;
+      color: #000 !important;
+      border: 1px solid #ccc !important;
+    }
+
+    .form-label,
+    label {
+      color: #000 !important;
+    }
+
+    .table,
+    .table th,
+    .table td {
+      background-color: #fff !important;
+      color: #000 !important;
+      border-color: #ccc !important;
+    }
+
+    .btn,
+    .btn-primary,
+    .btn-success,
+    .btn-danger,
+    .btn-secondary {
+      background-color: #fff !important;
+      color: #000 !important;
+      border: 1px solid #ccc !important;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #f8f9fa !important;
+      color: #28a745 !important;
+      border: 1px solid #28a745 !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #000 !important;
+    }
+
+    a, a:visited {
+      color: #000 !important;
+    }
+
+    .bg-light, .bg-white, .bg-secondary, .bg-body, .bg-transparent {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+
+    .border, .border-bottom, .border-top, .border-left, .border-right {
+      border-color: #ddd !important;
+    }
+
+    .modal-content,
+    .popover,
+    .tooltip-inner,
+    .input-group-text {
+      background-color: #fff !important;
+      color: #000 !important;
+      border-color: #ddd !important;
+    }
+
+    p, span {
+      color: #000 !important;
+    }
+
+    img {
+      background: transparent !important;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #efefef;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ddd;
+    }
+
+    canvas {
+      background-color: #fff !important;
     }
   </style>
 
@@ -51,10 +212,11 @@
       <div class="sidebar-heading">Settings </div>
       <div class="list-group list-group-flush">
         <a href="profile.php" class="list-group-item list-group-item-action "><span data-feather="user"></span> Profile</a>
+        <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span>AiAssistant</a>
         <a href="logout.php" class="list-group-item list-group-item-action "><span data-feather="power"></span> Logout</a>
       </div>
     </div>
-  
+
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light  border-bottom">
@@ -141,7 +303,7 @@
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/Chart.min.js"></script>
-  
+
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
