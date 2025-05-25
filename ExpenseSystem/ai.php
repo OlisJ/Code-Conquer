@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['prompt'])) {
                     <div class="col-md-8 col-lg-6">
                         <div class="card shadow-sm mb-5">
                             <div class="card-header bg-success text-white d-flex align-items-center">
-                                <img src="https://ui-avatars.com/api/?name=AI+Accountant&background=28a745&color=fff&size=40" alt="AI Avatar" class="rounded-circle mr-3" style="width:40px;height:40px;">
+                                <img src="download.png" alt="AI Avatar" class="rounded-circle mr-3" style="width:40px;height:40px;">
                                 <span class="ml-2 font-weight-bold">AI Accountant Assistant</span>
                             </div>
                             <div class="card-body" style="background:#f8f9fa;">
