@@ -122,7 +122,7 @@ if (isset($_GET['delete'])) {
             <div class="sidebar-heading">Settings </div>
             <div class="list-group list-group-flush">
                 <a href="profile.php" class="list-group-item list-group-item-action "><span data-feather="user"></span> Profile</a>
-                <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span>AiAssistant</a>
+                <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span> AiAssistant</a>
                 <a href="logout.php" class="list-group-item list-group-item-action "><span data-feather="power"></span> Logout</a>
             </div>
         </div>

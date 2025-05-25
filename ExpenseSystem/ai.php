@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['prompt'])) {
 
     if (isset($data['choices'][0]['message']['content'])) {
         $ai_response = $data['choices'][0]['message']['content'];
-        $char_limit = 300;
+        $char_limit = 700;
         if (strlen($ai_response) > $char_limit) {
             $preview = substr($ai_response, 0, $char_limit);
             echo json_encode([
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['prompt'])) {
             <div class="sidebar-heading">Settings </div>
             <div class="list-group list-group-flush">
                 <a href="profile.php" class="list-group-item list-group-item-action "><span data-feather="user"></span> Profile</a>
-                <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span>AiAssistant</a>
+                <a href="ai.php" class="list-group-item list-group-item-action "><span data-feather="info"></span> AiAssistant</a>
                 <a href="logout.php" class="list-group-item list-group-item-action "><span data-feather="power"></span> Logout</a>
             </div>
         </div>
