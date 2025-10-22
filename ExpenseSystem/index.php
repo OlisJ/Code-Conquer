@@ -1,6 +1,3 @@
-
-}
-?>
 <?php
   include("session.php");
   $exp_category_dc = mysqli_query($con, "SELECT expensecategory FROM expenses WHERE user_id = '$userid' GROUP BY expensecategory");
